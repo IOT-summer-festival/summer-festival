@@ -23,3 +23,12 @@ void client::on_refresh_clicked()
 
 }
 
+
+void client::on_visit_clicked()
+{
+    this->hide();
+    reservation reservation;
+    reservation.setModal(true);
+    reservation.exec();
+    this->show();
+}

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "client.h"
+#include "register.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class login; }
@@ -18,6 +19,8 @@ public:
 
 private slots:
     void on_login_Btn_clicked();
+
+    void on_register_Btn_clicked();
 
 private:
     QDialog *dialog;

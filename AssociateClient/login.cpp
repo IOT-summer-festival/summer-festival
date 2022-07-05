@@ -51,3 +51,13 @@ void login::on_login_Btn_clicked()
     QMainWindow::close();
     client.exec();
 }
+
+void login::on_register_Btn_clicked()
+{
+    this->hide();
+    Register Register;
+    Register.setModal(true);
+    Register.exec();
+    this->show();
+}
+

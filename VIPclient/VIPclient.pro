@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,14 +16,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    client.cpp \
     main.cpp \
-    login.cpp
+    register.cpp \
+    login.cpp \
+    reservation.cpp
 
 HEADERS += \
-    login.h
+    client.h \
+    con_DB.h \
+    login.h\
+    register.h \
+    reservation.h \
+    size.h
 
 FORMS += \
-    login.ui
+    client.ui \
+    login.ui \
+    register.ui \
+    reservation.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

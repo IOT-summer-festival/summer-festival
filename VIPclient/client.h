@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <reservation.h>
 //#include "con_DB.h"
 
 namespace Ui {
@@ -28,6 +29,8 @@ protected:
 private slots:
     void refresh();
     void on_refresh_clicked();
+
+    void on_visit_clicked();
 
 private:
     Ui::client *ui;
