@@ -25,7 +25,11 @@ private slots:
     void on_ck_pw_Btn_clicked();
 
 private:
-    std::string id;
+    int id_ck;
+    con_db c;
+    std::string query_string;
+    QSqlQuery query;
+    QString id;
     std::string pw;
     std::string name;
     QMessageBox m_box;

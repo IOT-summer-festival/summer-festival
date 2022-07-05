@@ -4,13 +4,13 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <reservation.h>
-//#include "con_DB.h"
+#include "con_DB.h"
 
 namespace Ui {
 class client;
 }
 
-class client : public QDialog//,public con_db
+class client : public QDialog
 {
     Q_OBJECT
 
@@ -33,6 +33,8 @@ private slots:
     void on_visit_clicked();
 
 private:
+    std::string query_string;
+    QSqlQuery query;
     Ui::client *ui;
 };
 

@@ -23,9 +23,12 @@ private slots:
     void on_register_Btn_clicked();
 
 private:
+    con_db c;
+    std::string query_string;
+    QSqlQuery query;
     QDialog *dialog;
     std::string try_login_id;
-    std::string try_login_pw;
+    QString try_login_pw;
     Ui::login *ui;
 };
 #endif // LOGIN_H

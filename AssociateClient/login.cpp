@@ -6,7 +6,6 @@ login::login(QWidget *parent)
     , ui(new Ui::login)
 {
     ui->setupUi(this);
-    //con_db();
 }
 
 login::~login()
@@ -18,38 +17,38 @@ login::~login()
 void login::on_login_Btn_clicked()
 {
     try_login_id = ui->id_text->text().toStdString();
-    try_login_pw = ui->pw_text->text().toStdString();
-    /*
-    sprintf(query, "SELECT pw FROM User where id='%s'", try_login_id.c_str());
-    if (mysql_query(&conn, query) != 0)
+    try_login_pw = ui->pw_text->text();
+    query_string = "SELECT userPW FROM Member WHERE userID='" + try_login_id+"'";
+    query.exec(QString::fromStdString(query_string));
+    query.first();
+    if(query.size() == 0)
     {
-        puts("login_error");
-    }else{
-        sql_result = mysql_store_result(&conn);
-        sql_row = mysql_fetch_row(sql_result);
-
-        std::cout << "password: " << sql_row[0] << std::endl;
-
-        if (strcmp(try_login_pw.c_str(), sql_row[0]) == 0)
+        QMessageBox::warning(this, "error", "존재하지 않는 아이디입니다");
+    }
+    else
+    {
+        if(query.value(0).toString() != try_login_pw)
         {
-            show_m_box("로그인 성공");
-            client client;
-            client.setModal(true);
-            QMainWindow::close();
-            client.exec();
+            QMessageBox::warning(this, "error", "비밀번호가 틀렸습니다");
         }
         else
         {
-            show_m_box("로그인 실패");
+            query_string = "SELECT VIP_rank FROM Member WHERE userID='" + try_login_id+"'";
+            query.exec(QString::fromStdString(query_string));
+            query.first();
+            if(query.value(0).toString() == "N")
+            {
+                QMessageBox::information(this, "환 영", "로그인 성공");
+                client client;
+                client.setModal(true);
+                QMainWindow::close();
+                client.exec();
+            }else
+            {
+                QMessageBox::warning(this, "error", "vip입니다 vip클라이언트를 이용해주세요");
+            }
         }
-        mysql_free_result(sql_result);
     }
-    */
-    client client;
-    client.show_m_box("로그인 성공");
-    client.setModal(true);
-    QMainWindow::close();
-    client.exec();
 }
 
 void login::on_register_Btn_clicked()
@@ -60,4 +59,3 @@ void login::on_register_Btn_clicked()
     Register.exec();
     this->show();
 }
-

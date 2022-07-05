@@ -50,58 +50,6 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QTimeEdit" name="time">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>360</y>
-     <width>151</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="buttonSymbols">
-    <enum>QAbstractSpinBox::NoButtons</enum>
-   </property>
-   <property name="dateTime">
-    <datetime>
-     <hour>13</hour>
-     <minute>0</minute>
-     <second>0</second>
-     <year>2022</year>
-     <month>6</month>
-     <day>26</day>
-    </datetime>
-   </property>
-   <property name="maximumDateTime">
-    <datetime>
-     <hour>23</hour>
-     <minute>59</minute>
-     <second>59</second>
-     <year>2022</year>
-     <month>6</month>
-     <day>26</day>
-    </datetime>
-   </property>
-   <property name="minimumTime">
-    <time>
-     <hour>0</hour>
-     <minute>0</minute>
-     <second>0</second>
-    </time>
-   </property>
-   <property name="displayFormat">
-    <string>hh시mm분</string>
-   </property>
-   <property name="calendarPopup">
-    <bool>false</bool>
-   </property>
-   <property name="timeSpec">
-    <enum>Qt::LocalTime</enum>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -115,17 +63,30 @@
     <string>예약하기</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox">
+  <widget class="QCheckBox" name="guide">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>390</y>
-     <width>78</width>
+     <x>317</x>
+     <y>370</y>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
    <property name="text">
     <string>가이드</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="sleep">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>370</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>숙박</string>
    </property>
   </widget>
  </widget>

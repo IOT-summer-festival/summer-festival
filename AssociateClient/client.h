@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
-//#include "con_DB.h"
+#include "con_DB.h"
 
 namespace Ui {
 class client;
@@ -30,6 +30,8 @@ private slots:
     void on_refresh_clicked();
 
 private:
+    std::string query_string;
+    QSqlQuery query;
     Ui::client *ui;
 };
 

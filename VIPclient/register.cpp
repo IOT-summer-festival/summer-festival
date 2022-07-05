@@ -16,8 +16,18 @@ Register::~Register()
 
 void Register::on_id_check_clicked()
 {
-    id = ui->id_text->text().toStdString();
-    if(id != "")
+    id_ck = 0;
+    id = ui->id_text->text();
+
+    query_string = "SELECT userID FROM Member WHERE userID='" + id.toStdString()+"'";
+    query.exec(QString::fromStdString(query_string));
+    query.first();
+    qDebug()<<query.value(0).toString();
+
+    if(query.value(0).toString() == id){
+        QMessageBox::warning(this, "error", "아이디가 중복되었습니다");
+
+    }else
     {
         ui->id_text->setEnabled(0);
         ui->id_check->setEnabled(0);
@@ -53,6 +63,13 @@ void Register::on_ck_pw_Btn_clicked()
 void Register::on_reg_Btn_clicked()
 {
     name = ui->name->text().toStdString();
+    query.prepare("INSERT INTO Member(userID, userPW, name, VIP_rank) "
+                  "VALUES (?, ?, ?, ?)");
+    query.addBindValue(ui->id_text->text());
+    query.addBindValue(ui->pw_text->text());
+    query.addBindValue(ui->name->text());
+    query.addBindValue("V");
+    query.exec();
     this->close();
 }
 
