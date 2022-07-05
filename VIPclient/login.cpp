@@ -56,10 +56,8 @@ void login::on_login_Btn_clicked()
 
 void login::on_register_Btn_clicked()
 {
-    this->hide();
     Register Register;
     Register.setModal(true);
     Register.exec();
-    this->show();
 }
 
