@@ -15,7 +15,7 @@ class client : public QDialog
     Q_OBJECT
 
 public:
-    explicit client(QWidget *parent = nullptr);
+    explicit client(QString saved_id,QString saved_name,QWidget *parent = nullptr);
     ~client();
 
     void show_m_box(QString m_box_str){
@@ -33,6 +33,8 @@ private slots:
     void on_visit_clicked();
 
 private:
+    QString id;
+    QString name;
     std::string query_string;
     QSqlQuery query;
     Ui::client *ui;

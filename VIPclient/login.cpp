@@ -38,8 +38,11 @@ void login::on_login_Btn_clicked()
             query.first();
             if(query.value(0).toString() == "V")
             {
+                query_string = "SELECT name FROM Member WHERE userID='" + try_login_id+"'";
+                query.exec(QString::fromStdString(query_string));
+                query.first();
                 QMessageBox::information(this, "환 영", "로그인 성공");
-                client client;
+                client client(QString::fromStdString(try_login_id),query.value(0).toString());
                 client.setModal(true);
                 QMainWindow::close();
                 client.exec();

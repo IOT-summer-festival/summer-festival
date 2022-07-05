@@ -38,19 +38,6 @@
     <string>새로고침</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="lodgment">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>270</y>
-     <width>121</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>숙박 예약</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="visit">
    <property name="geometry">
     <rect>
@@ -68,7 +55,7 @@
    <property name="geometry">
     <rect>
      <x>610</x>
-     <y>410</y>
+     <y>270</y>
      <width>89</width>
      <height>25</height>
     </rect>

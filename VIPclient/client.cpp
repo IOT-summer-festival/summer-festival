@@ -1,12 +1,15 @@
 #include "client.h"
 #include "ui_client.h"
 
-client::client(QWidget *parent) :
+client::client(QString saved_id,QString saved_name,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::client)
 {
     ui->setupUi(this);
     refresh();
+
+    id = saved_id;
+    name = saved_name;
 }
 
 client::~client()
@@ -37,9 +40,11 @@ void client::on_refresh_clicked()
 
 void client::on_visit_clicked()
 {
-    this->hide();
-    reservation reservation;
+    QString Where;
+    foreach( QListWidgetItem *item, ui->list->selectedItems())
+        Where = item->text();
+
+    reservation reservation(id,name,Where);
     reservation.setModal(true);
     reservation.exec();
-    this->show();
 }
