@@ -48,3 +48,10 @@ void client::on_visit_clicked()
     reservation.setModal(true);
     reservation.exec();
 }
+
+void client::on_info_clicked()
+{
+    my_info my_info(id);
+    my_info.setModal(true);
+    my_info.exec();
+}

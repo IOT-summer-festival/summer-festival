@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>client</class>
- <widget class="QDialog" name="client">
+ <class>my_info</class>
+ <widget class="QDialog" name="my_info">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,7 +16,7 @@
     <height>500</height>
    </size>
   </property>
-  <property name="maximumSize">
+  <property name="sizeIncrement">
    <size>
     <width>750</width>
     <height>500</height>
@@ -25,10 +25,46 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QListWidget" name="list">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>60</y>
+     <width>471</width>
+     <height>311</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="change_pw">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>210</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>비밀번호 변경</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>110</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>예약 취소</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="refresh">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>80</x>
      <y>370</y>
      <width>471</width>
      <height>25</height>
@@ -38,40 +74,17 @@
     <string>새로고침</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="visit">
+  <widget class="QPushButton" name="out">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>110</y>
+     <x>570</x>
+     <y>310</y>
      <width>121</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>관광지 방문 예약</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="info">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>270</y>
-     <width>121</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>내 정보</string>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="list">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>60</y>
-     <width>471</width>
-     <height>311</height>
-    </rect>
+    <string>회원 탈퇴</string>
    </property>
   </widget>
  </widget>

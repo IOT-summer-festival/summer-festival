@@ -37,32 +37,44 @@ void reservation::on_sleep_stateChanged(int arg1)
 void reservation::on_pushButton_clicked()
 {
     QString total;
+    int ck =0;
     QString guide_pressed;
     QString sleep_pressed;
     if(slt_guide == 2)
-        guide_pressed = "가이드 예약 : O";
+        guide_pressed = "가이드:O";
     else
-        guide_pressed = "가이드 예약 : X";
+        guide_pressed = "가이드:X";
     if(slt_sleep == 2)
-        sleep_pressed = "숙소 예약 : O";
+        sleep_pressed = "숙박:O";
     else
-        sleep_pressed = "숙소 예약 : X";
+        sleep_pressed = "숙박:X";
     QString date = ui->calendar->selectedDate().toString("yyyy년 MM월 dd일");
 
-    query_string = "SELECT reserv FROM beach WHERE name='" + travel.toStdString() +"'";
+    query_string = "SELECT * FROM reserv";
     query.exec(QString::fromStdString(query_string));
     query.first();
-    if (query.value(0).toString().toStdString().find(date.toStdString()) != std::string::npos)
+    qDebug()<<query.value(3).toString();
+    while(query.value(0).toString() != "")
     {
-        QMessageBox::warning(this, "", "해당 날짜에 일정이 존재합니다");
-    }else
+        if(query.value(1).toString() == travel && query.value(6).toString() == date)
+        {
+            ck= 1;
+            QMessageBox::warning(this, "", "해당 날짜에 일정이 존재합니다");
+            break;
+        }
+        query.next();
+    }
+    if(ck != 1)
     {
-        if (query.value(0).toString().length()>=3)
-            total =query.value(0).toString() + date +"/"+id+"/"+name+"/"+guide_pressed+"/"+sleep_pressed+"|";
-        else
-            total = date +"/"+id+"/"+name+"/"+guide_pressed+"/"+sleep_pressed+"|";
-        query_string = "UPDATE  beach SET reserv = '"+total.toStdString()+"' WHERE name = '"+travel.toStdString()+"'";
-        query.exec(QString::fromStdString(query_string));
+
+        query.prepare("INSERT INTO reserv(attr, id, name, hotel,guide,date) "
+                      "VALUES (?, ?, ?,?,?)");
+        query.addBindValue(travel);
+        query.addBindValue(id);
+        query.addBindValue(sleep_pressed);
+        query.addBindValue(guide_pressed);
+        query.addBindValue(date);
+        query.exec();
         this->close();
     }
 }

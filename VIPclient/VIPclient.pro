@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     client.cpp \
     main.cpp \
+    my_info.cpp \
     register.cpp \
     login.cpp \
     reservation.cpp
@@ -26,6 +27,7 @@ HEADERS += \
     client.h \
     con_DB.h \
     login.h\
+    my_info.h \
     register.h \
     reservation.h \
     size.h
@@ -33,6 +35,7 @@ HEADERS += \
 FORMS += \
     client.ui \
     login.ui \
+    my_info.ui \
     register.ui \
     reservation.ui
 

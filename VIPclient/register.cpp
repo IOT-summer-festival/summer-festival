@@ -22,7 +22,6 @@ void Register::on_id_check_clicked()
     query_string = "SELECT userID FROM Member WHERE userID='" + id.toStdString()+"'";
     query.exec(QString::fromStdString(query_string));
     query.first();
-    qDebug()<<query.value(0).toString();
 
     if(query.value(0).toString() == id){
         QMessageBox::warning(this, "error", "아이디가 중복되었습니다");

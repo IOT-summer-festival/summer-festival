@@ -26,7 +26,6 @@ private slots:
 
 private:
     int id_ck;
-    con_db c;
     std::string query_string;
     QSqlQuery query;
     QString id;

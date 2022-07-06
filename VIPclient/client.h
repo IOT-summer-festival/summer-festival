@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <reservation.h>
 #include "con_DB.h"
+#include "my_info.h"
 
 namespace Ui {
 class client;
@@ -31,6 +32,8 @@ private slots:
     void on_refresh_clicked();
 
     void on_visit_clicked();
+
+    void on_info_clicked();
 
 private:
     QString id;
