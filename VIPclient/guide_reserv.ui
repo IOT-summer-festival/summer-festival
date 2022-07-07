@@ -13,19 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="slt">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>300</y>
-     <width>291</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>선택</string>
-   </property>
-  </widget>
   <widget class="QListWidget" name="list">
    <property name="geometry">
     <rect>
@@ -34,6 +21,32 @@
      <width>291</width>
      <height>291</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="slt">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>취소</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>300</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>가이드 취소</string>
    </property>
   </widget>
  </widget>

@@ -21,6 +21,8 @@ private slots:
     void refresh();
     void on_slt_clicked();
 
+    void on_cancel_clicked();
+
 private:
     QString guide;
     std::string query_string;

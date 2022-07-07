@@ -41,3 +41,9 @@ QString Guide_reserv::return_guide()
     return guide;
 }
 
+
+void Guide_reserv::on_cancel_clicked()
+{
+    guide = "X";
+    this->close();
+}

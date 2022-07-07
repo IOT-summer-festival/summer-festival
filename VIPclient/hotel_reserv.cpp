@@ -40,3 +40,9 @@ QString hotel_reserv::return_hotel()
     }
     return hotel;
 }
+
+void hotel_reserv::on_cancel_clicked()
+{
+    hotel = "X";
+    this->close();
+}

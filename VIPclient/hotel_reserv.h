@@ -21,6 +21,8 @@ private slots:
     void refresh();
     void on_slt_clicked();
 
+    void on_cancel_clicked();
+
 private:
     std::string query_string;
     QSqlQuery query;
