@@ -28,10 +28,10 @@
   <widget class="QCalendarWidget" name="calendar">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>70</y>
-     <width>411</width>
-     <height>281</height>
+     <x>140</x>
+     <y>50</y>
+     <width>461</width>
+     <height>311</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -53,40 +53,66 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>360</y>
+     <x>450</x>
+     <y>370</y>
      <width>141</width>
-     <height>51</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
     <string>예약하기</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="guide">
+  <widget class="QPushButton" name="hotel">
    <property name="geometry">
     <rect>
-     <x>317</x>
+     <x>350</x>
      <y>370</y>
-     <width>81</width>
-     <height>22</height>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>호텔 예약</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="guide">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>410</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>가이드</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="sleep">
+  <widget class="QLineEdit" name="hote_text">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>140</x>
      <y>370</y>
-     <width>78</width>
-     <height>22</height>
+     <width>201</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>숙박</string>
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="guide_text">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>410</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X</string>
    </property>
   </widget>
  </widget>

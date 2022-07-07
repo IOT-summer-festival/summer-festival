@@ -16,7 +16,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    change_pw.cpp \
     client.cpp \
+    guide_reserv.cpp \
+    hotel_reserv.cpp \
     main.cpp \
     my_info.cpp \
     register.cpp \
@@ -24,8 +27,11 @@ SOURCES += \
     reservation.cpp
 
 HEADERS += \
+    change_pw.h \
     client.h \
     con_DB.h \
+    guide_reserv.h \
+    hotel_reserv.h \
     login.h\
     my_info.h \
     register.h \
@@ -33,7 +39,10 @@ HEADERS += \
     size.h
 
 FORMS += \
+    change_pw.ui \
     client.ui \
+    guide_reserv.ui \
+    hotel_reserv.ui \
     login.ui \
     my_info.ui \
     register.ui \

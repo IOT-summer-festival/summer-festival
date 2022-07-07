@@ -20,16 +20,21 @@ client::~client()
 void client::refresh()
 {
     ui->list->clear();
-    query_string = "SELECT name FROM beach";
+    int line=0;
+    QStringList head= {"관광지","주소"};
+    ui->list->setHorizontalHeaderLabels(head);
+    query_string = "SELECT name,addr FROM beach";
     query.exec(QString::fromStdString(query_string));
-    query.first();
-    while(query.value(0).toString() != "")
+    ui->list->setRowCount(query.size());
+    while(query.next())
     {
-        if(query.value(0).toString() == "")
-            break;
-        ui->list->addItem(query.value(0).toString());
-        query.next();
+        for(int i=0; i<2; i++)
+        {
+            ui->list->setItem(line, i, new QTableWidgetItem(query.value(i).toString()));
+        }
+        line++;
     }
+    ui->list->show();
 }
 
 void client::on_refresh_clicked()
@@ -40,13 +45,24 @@ void client::on_refresh_clicked()
 
 void client::on_visit_clicked()
 {
-    QString Where;
-    foreach( QListWidgetItem *item, ui->list->selectedItems())
-        Where = item->text();
+    QList<QTableWidgetItem> list;
+    int row = ui->list->currentRow();
+    if(row == -1)
+    {
+        QMessageBox::information(this,"","관광지를 선택해주세요");
+    }
+    else
+    {
+        for(int i =0; i<2; i++)
+        {
+            list.append(*(ui->list->takeItem(row,i)));
+        }
+        refresh();
 
-    reservation reservation(id,name,Where);
-    reservation.setModal(true);
-    reservation.exec();
+        reservation reserv(id,name,list.value(0).text());
+        reserv.setModal(true);
+        reserv.exec();
+    }
 }
 
 void client::on_info_clicked()

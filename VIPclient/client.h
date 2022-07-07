@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include <QMessageBox>
-#include <reservation.h>
+#include <QListWidget>
+#include <QTableWidget>
+#include "reservation.h"
 #include "con_DB.h"
 #include "my_info.h"
 

@@ -64,15 +64,46 @@
     <string>내 정보</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="list">
+  <widget class="QTableWidget" name="list">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>60</y>
+     <y>50</y>
      <width>471</width>
-     <height>311</height>
+     <height>321</height>
     </rect>
    </property>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>관광지</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>주소</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

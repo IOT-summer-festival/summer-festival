@@ -5,6 +5,8 @@
 #include <QtDebug>
 #include <string>
 #include <QMessageBox>
+#include "guide_reserv.h"
+#include "hotel_reserv.h"
 #include "con_DB.h"
 
 namespace Ui {
@@ -21,10 +23,9 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void on_hotel_clicked();
 
-    void on_guide_stateChanged(int arg1);
-
-    void on_sleep_stateChanged(int arg1);
+    void on_guide_clicked();
 
 private:
     QString id;
@@ -32,8 +33,6 @@ private:
     std::string query_string;
     QSqlQuery query;
     QString travel;
-    int slt_guide=0;
-    int slt_sleep=0;
     Ui::reservation *ui;
 };
 

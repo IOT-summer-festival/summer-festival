@@ -3,7 +3,10 @@
 
 #include <QDialog>
 #include <sstream>
+#include <QList>
+#include "change_pw.h"
 #include "client.h"
+#include "hotel_reserv.h"
 
 namespace Ui {
 class my_info;
@@ -25,8 +28,15 @@ private slots:
 
     void on_out_clicked();
 
+    void on_change_pw_clicked();
+
+    void on_ch_hotel_clicked();
+
+    void on_ch_guide_clicked();
+
 private:
-    std::vector<std::string> split(std::string str, char Delimiter);
+    QString guide;
+    QString hotel;
     QString id;
     std::string query_string;
     QSqlQuery query;

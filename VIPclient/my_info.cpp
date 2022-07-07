@@ -15,34 +15,24 @@ my_info::~my_info()
     delete ui;
 }
 
-std::vector<std::string> my_info::split(std::string str, char Delimiter) {
-    std::istringstream iss(str);             // istringstream에 str을 담는다.
-    std::string buffer;                      // 구분자를 기준으로 절삭된 문자열이 담겨지는 버퍼
-
-    std::vector<std::string> result;
-
-    // istringstream은 istream을 상속받으므로 getline을 사용할 수 있다.
-    while (getline(iss, buffer, Delimiter)) {
-        result.push_back(buffer);               // 절삭된 문자열을 vector에 저장
-    }
-
-    return result;
-}
-
 void my_info::refresh()
 {
     ui->list->clear();
-    query_string = "SELECT * FROM reserv WHERE id = '"+id.toStdString()+"'";
+    int line=0;
+    QStringList head= {"예약일","관광지","호텔","가이드"};
+    ui->list->setHorizontalHeaderLabels(head);
+    query_string = "SELECT date, attr, hotel, guide FROM reserv WHERE id = '"+id.toStdString()+"'";
     query.exec(QString::fromStdString(query_string));
-    query.first();
-    while(query.value(0).toString() != "")
+    ui->list->setRowCount(query.size());
+    while(query.next())
     {
-        if(query.value(0).toString() == "")
-            break;
-        QString item = query.value(1).toString()+"|"+query.value(3).toString()+"|"+query.value(4).toString()+"|"+query.value(5).toString();
-        ui->list->addItem(item);
-        query.next();
+        for(int i=0; i<4; i++)
+        {
+            ui->list->setItem(line, i, new QTableWidgetItem(query.value(i).toString()));
+        }
+        line++;
     }
+    ui->list->show();
 }
 
 void my_info::on_refresh_clicked()
@@ -52,22 +42,31 @@ void my_info::on_refresh_clicked()
 
 void my_info::on_cancel_clicked()
 {
-     std::string split_text;
-     foreach( QListWidgetItem *item, ui->list->selectedItems())
-         split_text = item->text().toStdString();
+     QList<QTableWidgetItem> list;
+     int row = ui->list->currentRow();
 
-     std::vector<std::string> temp = split(split_text,'|');
+     if(row == -1)
+     {
+         QMessageBox::information(this,"","관광지를 선택해주세요");
+     }
+     else
+     {
+        for(int i =0; i<2; i++)
+        {
+            list.append(*(ui->list->takeItem(row,i)));
+        }
 
-     query_string = "DELETE FROM reserv WHERE attr = '"+temp[0]+"'and date = '"+temp[3]+"'";
-     query.prepare(QString::fromStdString(query_string));
-     query.exec();
-     refresh();
+        query_string = "DELETE FROM reserv WHERE attr = '"+list.value(1).text().toStdString()+"'and date = '"+list.value(0).text().toStdString()+"'";
+        query.prepare(QString::fromStdString(query_string));
+        query.exec();
+        refresh();
+     }
 }
 
 void my_info::on_out_clicked()
 {
     QMessageBox msgBox;
-    msgBox.setWindowFlags(msgBox.windowFlags() | Qt::WindowStaysOnTopHint| Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+    msgBox.setWindowFlags(msgBox.windowFlags() | Qt::WindowTitleHint | Qt::WindowStaysOnTopHint| Qt::CustomizeWindowHint);
     msgBox.setWindowTitle("회원탈퇴");
     msgBox.setText(tr("정말 탈퇴하시겠습니까?"));
     msgBox.addButton(tr("아니요"), QMessageBox::YesRole);
@@ -79,9 +78,68 @@ void my_info::on_out_clicked()
         query_string = "INSERT INTO delete_Mem select * FROM Member WHERE userID='"+id.toStdString()+"'";
         query.prepare(QString::fromStdString(query_string));
         query.exec();
-        query_string = "DELETE FROM Member WHERE userID='"+id.toStdString()+"'";     query.prepare(QString::fromStdString(query_string));
+        query_string = "DELETE FROM Member WHERE userID='"+id.toStdString()+"'";
+        query.prepare(QString::fromStdString(query_string));
         query.exec();
         QApplication::quit();
-    } else {
+    }
+}
+
+void my_info::on_change_pw_clicked()
+{
+    change_Pw c_p(id);
+    c_p.setModal(true);
+    c_p.exec();
+}
+
+void my_info::on_ch_hotel_clicked()
+{
+    QList<QTableWidgetItem> list;
+    int row = ui->list->currentRow();
+    if(row == -1)
+    {
+        QMessageBox::information(this,"","관광지를 선택해주세요");
+    }
+    else
+    {
+        hotel_reserv hotel_r;
+        hotel_r.setModal(true);
+        hotel_r.exec();
+
+        hotel = hotel_r.return_hotel();
+
+        for(int i =0; i<2; i++)
+        {
+            list.append(*(ui->list->takeItem(row,i)));
+        }
+        query.prepare("UPDATE reserv SET hotel = '"+hotel+"' Where date = '"+list.value(0).text()+"' and attr = '"+list.value(1).text()+"'");
+        query.exec();
+        refresh();
+    }
+}
+
+void my_info::on_ch_guide_clicked()
+{
+    QList<QTableWidgetItem> list;
+    int row = ui->list->currentRow();
+    if(row == -1)
+    {
+        QMessageBox::information(this,"","관광지를 선택해주세요");
+    }
+    else
+    {
+        Guide_reserv gu;
+        gu.setModal(true);
+        gu.exec();
+
+        guide = gu.return_guide();
+
+        for(int i =0; i<2; i++)
+        {
+            list.append(*(ui->list->takeItem(row,i)));
+        }
+        query.prepare("UPDATE reserv SET guide = '"+guide+"' Where date = '"+list.value(0).text()+"' and attr = '"+list.value(1).text()+"'");
+        query.exec();
+        refresh();
     }
 }

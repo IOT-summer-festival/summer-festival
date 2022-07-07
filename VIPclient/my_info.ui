@@ -25,21 +25,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="list">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>60</y>
-     <width>471</width>
-     <height>311</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="change_pw">
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>210</y>
+     <y>280</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -52,7 +42,7 @@
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>110</y>
+     <y>200</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -64,9 +54,9 @@
   <widget class="QPushButton" name="refresh">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>370</y>
-     <width>471</width>
+     <x>60</x>
+     <y>400</y>
+     <width>491</width>
      <height>25</height>
     </rect>
    </property>
@@ -78,13 +68,90 @@
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>310</y>
+     <y>360</y>
      <width>121</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
     <string>회원 탈퇴</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="list">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>491</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>예약일</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>관광지</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>호텔</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>가이드</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="ch_hotel">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>40</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>호텔 변경</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ch_guide">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>120</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>가이드 변경</string>
    </property>
   </widget>
  </widget>
