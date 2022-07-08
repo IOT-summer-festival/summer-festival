@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 54);
+color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QPushButton" name="change_pw">
    <property name="geometry">
     <rect>
@@ -33,6 +37,13 @@
      <width>121</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
    </property>
    <property name="text">
     <string>비밀번호 변경</string>
@@ -47,6 +58,13 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
+   </property>
    <property name="text">
     <string>예약 취소</string>
    </property>
@@ -59,6 +77,13 @@
      <width>491</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
    </property>
    <property name="text">
     <string>새로고침</string>
@@ -73,6 +98,13 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
+   </property>
    <property name="text">
     <string>회원 탈퇴</string>
    </property>
@@ -85,6 +117,13 @@
      <width>491</width>
      <height>361</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 5px;
+</string>
    </property>
    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
     <bool>false</bool>
@@ -137,6 +176,13 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
+   </property>
    <property name="text">
     <string>호텔 변경</string>
    </property>
@@ -149,6 +195,13 @@
      <width>121</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
    </property>
    <property name="text">
     <string>가이드 변경</string>

@@ -29,6 +29,7 @@ void Register::on_id_check_clicked()
 
     }else
     {
+        QMessageBox::information(this, "", "사용가능한 아이디입니다");
         ui->id_text->setEnabled(0);
         ui->id_check->setEnabled(0);
 
@@ -46,6 +47,7 @@ void Register::on_ck_pw_Btn_clicked()
 
     if(pw == ck_pw)
     {
+        QMessageBox::information(this, "", "비밀번호가 일치합니다");
         ui->pw_text->setEnabled(0);
         ui->ck_pw_text->setEnabled(0);
         ui->ck_pw_Btn->setEnabled(0);
@@ -62,6 +64,7 @@ void Register::on_ck_pw_Btn_clicked()
 
 void Register::on_reg_Btn_clicked()
 {
+    QMessageBox::information(this, "", "회원가입이 완료되었습니다");
     name = ui->name->text().toStdString();
     query.prepare("INSERT INTO Member(userID, userPW, name, VIP_rank) "
                   "VALUES (?, ?, ?, ?)");

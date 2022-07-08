@@ -13,14 +13,24 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(171, 199, 220);</string>
+  </property>
   <widget class="QPushButton" name="id_check">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>60</y>
+     <x>260</x>
+     <y>50</y>
      <width>89</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
    </property>
    <property name="text">
     <string>중복확인</string>
@@ -32,11 +42,18 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>220</y>
+     <x>140</x>
+     <y>240</y>
      <width>89</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
    </property>
    <property name="text">
     <string>가입</string>
@@ -45,11 +62,16 @@
   <widget class="QLineEdit" name="id_text">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>60</y>
+     <x>130</x>
+     <y>50</y>
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="pw_text">
@@ -58,11 +80,16 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>130</x>
      <y>100</y>
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="ck_pw_text">
@@ -71,11 +98,16 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>140</y>
+     <x>130</x>
+     <y>150</y>
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="name">
@@ -84,11 +116,16 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>180</y>
+     <x>130</x>
+     <y>200</y>
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="ck_pw_Btn">
@@ -97,16 +134,86 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>140</y>
+     <x>260</x>
+     <y>150</y>
      <width>89</width>
      <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
+   </property>
+   <property name="text">
+    <string>비밀번호 확인</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>아이디</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>100</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>비밀번호</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>150</y>
+     <width>101</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
     <string>비밀번호 확인</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>200</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>닉네임</string>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>id_check</zorder>
+  <zorder>reg_Btn</zorder>
+  <zorder>id_text</zorder>
+  <zorder>pw_text</zorder>
+  <zorder>ck_pw_text</zorder>
+  <zorder>name</zorder>
+  <zorder>ck_pw_Btn</zorder>
  </widget>
  <resources/>
  <connections/>

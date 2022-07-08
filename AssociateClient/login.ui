@@ -13,15 +13,25 @@
   <property name="windowTitle">
    <string>login</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(171, 199, 220);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="login_Btn">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>120</y>
+      <x>150</x>
+      <y>150</y>
       <width>89</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
     </property>
     <property name="text">
      <string>login</string>
@@ -30,11 +40,18 @@
    <widget class="QPushButton" name="register_Btn">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>120</y>
+      <x>50</x>
+      <y>150</y>
       <width>89</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
     </property>
     <property name="text">
      <string>register</string>
@@ -43,21 +60,57 @@
    <widget class="QLineEdit" name="id_text">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
+      <x>50</x>
+      <y>60</y>
       <width>191</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="pw_text">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>80</y>
+      <x>50</x>
+      <y>110</y>
       <width>191</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: white;
+border-radius: 5px;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>아이디</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>90</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>비밀번호</string>
     </property>
    </widget>
   </widget>

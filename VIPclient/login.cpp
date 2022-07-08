@@ -6,6 +6,8 @@ login::login(QWidget *parent)
     , ui(new Ui::login)
 {
     ui->setupUi(this);
+    QPixmap pix("/home/iot/Git/CPP/beach/VIPclient/image/vip.png");
+    ui->vip->setPixmap(pix);
 }
 
 login::~login()

@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 54);
+color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QCalendarWidget" name="calendar">
    <property name="geometry">
     <rect>
@@ -35,7 +39,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(238, 238, 236);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="gridVisible">
     <bool>false</bool>
@@ -55,9 +60,16 @@
     <rect>
      <x>450</x>
      <y>370</y>
-     <width>141</width>
+     <width>151</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
    </property>
    <property name="text">
     <string>예약하기</string>
@@ -72,6 +84,13 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
+   </property>
    <property name="text">
     <string>호텔 예약</string>
    </property>
@@ -84,6 +103,13 @@
      <width>91</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(252, 233, 79), stop:1 rgba(196, 160, 0));
+border: 2px solid rgb(255, 215, 0);
+border-radius: 5px;
+</string>
    </property>
    <property name="text">
     <string>가이드</string>
@@ -98,6 +124,11 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(238, 238, 236);
+color: rgb(0, 0, 0);
+	border-radius: 5px;</string>
+   </property>
    <property name="text">
     <string>X</string>
    </property>
@@ -111,8 +142,32 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(238, 238, 236);
+color: rgb(0, 0, 0);
+	border-radius: 5px;</string>
+   </property>
    <property name="text">
     <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>91</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>image/cal.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

@@ -39,7 +39,7 @@ void login::on_login_Btn_clicked()
             if(query.value(0).toString() == "N")
             {
                 QMessageBox::information(this, "환 영", "로그인 성공");
-                client client;
+                client client(QString::fromStdString(try_login_id));
                 client.setModal(true);
                 QMainWindow::close();
                 client.exec();
@@ -53,9 +53,7 @@ void login::on_login_Btn_clicked()
 
 void login::on_register_Btn_clicked()
 {
-    this->hide();
     Register Register;
     Register.setModal(true);
     Register.exec();
-    this->show();
 }

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(171, 199, 220);</string>
+  </property>
   <widget class="QPushButton" name="refresh">
    <property name="geometry">
     <rect>
@@ -21,6 +24,13 @@
      <width>421</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
    </property>
    <property name="text">
     <string>새로고침</string>
@@ -35,19 +45,64 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 5px;
+}</string>
+   </property>
    <property name="text">
     <string>회원 탈퇴</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="list">
+  <widget class="QTableWidget" name="list">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>30</x>
+     <y>10</y>
      <width>471</width>
-     <height>311</height>
+     <height>321</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 5px;
+</string>
+   </property>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>관광지</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>주소</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>
